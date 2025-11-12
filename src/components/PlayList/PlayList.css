@@ -1,0 +1,50 @@
+.play-list {
+  margin: 20px 0;
+  padding-left: 20px;
+}
+
+.playlist-header {
+  padding: 10px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.playlist-header h2 {
+  cursor: pointer;
+}
+
+.movie-filter {
+  display: flex;
+  gap: 8px;
+}
+
+.movie-filter li {
+  list-style-type: none;
+}
+
+.movie-attribute {
+  display: flex;
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+.movie-sorting {
+  border: none;
+  border-radius: 3px;
+  outline: none;
+  height: 25px;
+  padding: 0 10px;
+  margin: 0 10px;
+  background-color: #c8dde1;
+}
+
+.active {
+  border-bottom: 1px solid #c8dde1;
+}
+
+.movie-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
