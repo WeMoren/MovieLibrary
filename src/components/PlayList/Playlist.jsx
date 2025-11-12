@@ -1,7 +1,41 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Playlist.css";
 import MovieCard from "./MovieCard";
+const apiKey = import.meta.env.VITE_TMDB_KEY;
 const Playlist = () => {
+  const [movies, setMovies] = useState([]);
+  const [minRating, setMinRating] = useState(0);
+  const [filteredMovies, setFilteredMovies] = useState([]);
+
+  useEffect(() => {
+    fetchMovies();
+  }, []);
+
+  const fetchMovies = async () => {
+    try {
+      const response = await fetch(apiKey);
+      const data = await response.json();
+      setMovies(data.results);
+      setFilteredMovies(data.results);
+    } catch (error) {
+      console.error("Error fetching movies:", error);
+    }
+  };
+
+  const handleFilter = (rate) => {
+    if (rate === minRating) {
+      setMinRating(0);
+      setFilteredMovies(movies);
+      return;
+    } else {
+      setMinRating(rate);
+      const filteredMovies = movies.filter(
+        (movie) => movie.vote_average >= rate
+      );
+      setFilteredMovies(filteredMovies);
+    }
+  };
+
   return (
     <section className="play-list">
       <header className="playlist-header">
@@ -9,9 +43,20 @@ const Playlist = () => {
 
         <div className="movie-attribute">
           <ul className="movie-filter">
-            <li className="filtered-item active">8+ Star</li>
-            <li className="filtered-item">7+ Star</li>
-            <li className="filtered-item">6+ Star</li>
+            <li
+              className={
+                minRating === 8 ? "filtered-item active" : "filtered-item"
+              }
+              onClick={() => handleFilter(8)}
+            >
+              8+ Star
+            </li>
+            <li className="filtered-item" onClick={() => handleFilter(7)}>
+              7+ Star
+            </li>
+            <li className="filtered-item" onClick={() => handleFilter(6)}>
+              6+ Star
+            </li>
           </ul>
 
           <div className="star-sort-order">
@@ -30,7 +75,9 @@ const Playlist = () => {
       </header>
 
       <div className="movie-cards">
-        <MovieCard />
+        {filteredMovies.map((movie) => (
+          <MovieCard key={movie.id} movie={movie} />
+        ))}
       </div>
     </section>
   );

@@ -1,5 +1,5 @@
 .movie-card {
-  min-height: 300px;
+  min-height: 250px;
   width: 200px;
   position: relative;
   transition: 0.4s ease-in-out;

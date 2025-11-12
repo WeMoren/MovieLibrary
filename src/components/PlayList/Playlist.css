@@ -43,8 +43,10 @@
   border-bottom: 1px solid #c8dde1;
 }
 
-.movie-card {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+.movie-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  place-items: center;
+  gap: 20px;
+  /* padding: 20px; */
 }
