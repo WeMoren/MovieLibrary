@@ -6,6 +6,7 @@ const Playlist = () => {
   const [movies, setMovies] = useState([]);
   const [minRating, setMinRating] = useState(0);
   const [filteredMovies, setFilteredMovies] = useState([]);
+  const [sort, setSort] = useState({ by: "default", order: "asc" });
 
   useEffect(() => {
     fetchMovies();
@@ -36,6 +37,12 @@ const Playlist = () => {
     }
   };
 
+  const handleSort = (e) => {
+    const { name, value } = e.target;
+    setSort((prev) => ({ ...prev, [name]: value }));
+  };
+  console.log(sort);
+
   return (
     <section className="play-list">
       <header className="playlist-header">
@@ -51,24 +58,46 @@ const Playlist = () => {
             >
               8+ Star
             </li>
-            <li className="filtered-item" onClick={() => handleFilter(7)}>
+            <li
+              className={
+                minRating === 7 ? "filtered-item active" : "filtered-item"
+              }
+              onClick={() => handleFilter(7)}
+            >
               7+ Star
             </li>
-            <li className="filtered-item" onClick={() => handleFilter(6)}>
+            <li
+              className={
+                minRating === 6 ? "filtered-item active" : "filtered-item"
+              }
+              onClick={() => handleFilter(6)}
+            >
               6+ Star
             </li>
           </ul>
 
           <div className="star-sort-order">
-            <select name="" id="" className="movie-sorting">
-              <option value="">SortBy</option>
-              <option value="">Date</option>
-              <option value="">Rating</option>
+            <select
+              name="by"
+              id=""
+              onChange={handleSort}
+              value={sort.by}
+              className="movie-sorting"
+            >
+              <option value="default">SortBy</option>
+              <option value="release_date">Date</option>
+              <option value="vote_average">Rating</option>
             </select>
 
-            <select name="" id="" className="movie-sorting">
-              <option value="">Ascending</option>
-              <option value="">Descending</option>
+            <select
+              name="order"
+              id=""
+              onChange={handleSort}
+              value={sort.order}
+              className="movie-sorting"
+            >
+              <option value="asc">Ascending</option>
+              <option value="desc">Descending</option>
             </select>
           </div>
         </div>
