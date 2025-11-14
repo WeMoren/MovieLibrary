@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import lodash from "lodash";
 import "./Playlist.css";
 import MovieCard from "./MovieCard";
 const apiKey = import.meta.env.VITE_TMDB_KEY;
@@ -11,6 +12,17 @@ const Playlist = () => {
   useEffect(() => {
     fetchMovies();
   }, []);
+
+  useEffect(() => {
+    if (sort.by !== "by") {
+      const sortedMovies = lodash.orderBy(
+        filteredMovies,
+        [sort.by],
+        [sort.order]
+      );
+      setFilteredMovies(sortedMovies);
+    }
+  }, [sort]);
 
   const fetchMovies = async () => {
     try {
@@ -41,7 +53,6 @@ const Playlist = () => {
     const { name, value } = e.target;
     setSort((prev) => ({ ...prev, [name]: value }));
   };
-  console.log(sort);
 
   return (
     <section className="play-list">
