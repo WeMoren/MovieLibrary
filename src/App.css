@@ -22,11 +22,15 @@
   color: #e8faff;
 }
 
+.app.light .footer p {
+  color: #c8dde1;
+}
+
 .app.light .footer a {
-  color: purple;
+  color: #efa5ef;
 }
 .app.light .footer a:hover {
-  color: #4e014e;
+  color: #f3e7f3;
 }
 .app.dark .footer a {
   color: #c2e8ff;

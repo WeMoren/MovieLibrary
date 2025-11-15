@@ -6,7 +6,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 20px;
+  padding: 15px 20px;
+  flex-wrap: wrap;
   border-bottom: 2px solid #657072;
   background: linear-gradient(to right, #001020, #002850);
 }
@@ -21,16 +22,20 @@
 }
 
 .navbar > .nav-links a {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
   text-decoration: none;
+  font-size: 1rem;
   color: #c8dde1;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 600px) {
   .nav-links a {
     font-size: 10px;
   }
 
   .navbar h1 {
-    font-size: 25px;
+    font-size: 1.2rem;
   }
 }
