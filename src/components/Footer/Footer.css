@@ -1,0 +1,21 @@
+.footer {
+  text-align: center;
+  padding: 30px 10px;
+  opacity: 0.75;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-top: 40px;
+}
+
+.footer p {
+  margin: 5px 0;
+}
+
+.footer a {
+  color: purple;
+  transition: all 0.4s ease-in-out;
+}
+
+.footer a:hover {
+  color: #f793f7;
+}

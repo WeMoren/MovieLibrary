@@ -4,6 +4,7 @@ import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 import PlayList from "./components/PlayList/Playlist";
 import MovieCard from "./components/PlayList/MovieCard";
+import Footer from "./components/Footer/Footer";
 
 const App = () => {
   const [theme, setTheme] = useState(() => {
@@ -29,6 +30,7 @@ const App = () => {
       />
       <PlayList category={category} />
       {/* <MovieCard /> */}
+      <Footer />
     </div>
   );
 };

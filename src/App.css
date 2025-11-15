@@ -21,3 +21,16 @@
 .app.light .navbar > .nav-links a {
   color: #e8faff;
 }
+
+.app.light .footer a {
+  color: purple;
+}
+.app.light .footer a:hover {
+  color: #4e014e;
+}
+.app.dark .footer a {
+  color: #c2e8ff;
+}
+.app.dark .footer a:hover {
+  color: #6fc2f6;
+}
