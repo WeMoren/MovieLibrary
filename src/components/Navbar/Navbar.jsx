@@ -1,7 +1,6 @@
 import React from "react";
 import ThemeToggle from "./ThemeToggle";
 import "./Navbar.css";
-import ReactEmoji from "react-emoji";
 const Navbar = ({ category, setCategory, theme, toggleTheme }) => {
   return (
     <nav className="navbar">

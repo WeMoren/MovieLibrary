@@ -66,7 +66,7 @@ const Playlist = ({ category }) => {
           {category === "popular"
             ? "Most Popular 🔥"
             : category === "toprated"
-            ? "Top Rated ⭐"
+            ? "Top Rated 🏆"
             : "Upcoming 🥳"}
         </h2>
 
