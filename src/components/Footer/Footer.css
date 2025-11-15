@@ -5,6 +5,7 @@
   font-size: 0.9rem;
   line-height: 1.5;
   margin-top: 40px;
+  background: linear-gradient(135deg, #001020, #002850);
 }
 
 .footer p {
