@@ -67,7 +67,7 @@ const Playlist = ({ category }) => {
             ? "Most Popular 🔥"
             : category === "toprated"
             ? "Top Rated ⭐"
-            : "Upcoming 🎬"}
+            : "Upcoming 🥳"}
         </h2>
 
         <div className="movie-attribute">

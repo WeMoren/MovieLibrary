@@ -24,3 +24,13 @@
   text-decoration: none;
   color: #c8dde1;
 }
+
+@media (max-width: 640px) {
+  .nav-links a {
+    font-size: 10px;
+  }
+
+  .navbar h1 {
+    font-size: 25px;
+  }
+}

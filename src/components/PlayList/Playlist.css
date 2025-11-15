@@ -50,3 +50,17 @@
   gap: 20px;
   /* padding: 20px; */
 }
+
+@media (max-width: 640px) {
+  .playlist-header h2 {
+    font-size: 16px;
+  }
+
+  .movie-filter li {
+    font-size: 10px;
+  }
+
+  .movie-sorting {
+    display: flex;
+  }
+}
