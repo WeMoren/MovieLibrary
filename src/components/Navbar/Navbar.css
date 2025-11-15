@@ -1,9 +1,14 @@
 .navbar {
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
   border-bottom: 2px solid #657072;
+  background: linear-gradient(to right, #001020, #002850);
 }
 
 .navbar h1 {

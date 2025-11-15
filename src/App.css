@@ -11,9 +11,13 @@
 .app.dark {
   background: linear-gradient(135deg, #001020, #002850);
 }
+
+.app.light.navbar {
+  background: linear-gradient(to right, #001020, #002850);
+}
 .app.light .navbar h1 {
-  color: #001020;
+  color: #c2e8ff;
 }
 .app.light .navbar > .nav-links a {
-  color: #003050;
+  color: #e8faff;
 }

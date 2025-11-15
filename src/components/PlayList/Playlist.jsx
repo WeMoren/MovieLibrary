@@ -2,16 +2,32 @@ import React, { useEffect, useState } from "react";
 import lodash from "lodash";
 import "./Playlist.css";
 import MovieCard from "./MovieCard";
-const apiKey = import.meta.env.VITE_TMDB_KEY;
-const Playlist = () => {
+const apiBaseUrl = import.meta.env.VITE_TMDB_BASE_URL;
+const Playlist = ({ category }) => {
   const [movies, setMovies] = useState([]);
   const [minRating, setMinRating] = useState(0);
   const [filteredMovies, setFilteredMovies] = useState([]);
   const [sort, setSort] = useState({ by: "default", order: "asc" });
 
   useEffect(() => {
+    const fetchMovies = async () => {
+      try {
+        let endpoint = category;
+        if (category === "toprated") {
+          endpoint = "top_rated";
+        }
+        let url = apiBaseUrl.replace("popular", endpoint);
+        const response = await fetch(url);
+        const data = await response.json();
+        setMovies(data.results);
+        setFilteredMovies(data.results);
+      } catch (error) {
+        console.error("Error fetching movies:", error);
+      }
+    };
+
     fetchMovies();
-  }, []);
+  }, [category]);
 
   useEffect(() => {
     if (sort.by !== "by") {
@@ -23,17 +39,6 @@ const Playlist = () => {
       setFilteredMovies(sortedMovies);
     }
   }, [sort]);
-
-  const fetchMovies = async () => {
-    try {
-      const response = await fetch(apiKey);
-      const data = await response.json();
-      setMovies(data.results);
-      setFilteredMovies(data.results);
-    } catch (error) {
-      console.error("Error fetching movies:", error);
-    }
-  };
 
   const handleFilter = (rate) => {
     if (rate === minRating) {
@@ -57,7 +62,13 @@ const Playlist = () => {
   return (
     <section className="play-list">
       <header className="playlist-header">
-        <h2 className="play-list-heading">Most Popular 🔥</h2>
+        <h2 className="play-list-heading">
+          {category === "popular"
+            ? "Most Popular 🔥"
+            : category === "toprated"
+            ? "Top Rated ⭐"
+            : "Upcoming 🎬"}
+        </h2>
 
         <div className="movie-attribute">
           <ul className="movie-filter">
