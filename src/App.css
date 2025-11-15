@@ -2,3 +2,18 @@
   display: grid;
   grid-template-rows: 75px auto;
 }
+
+.app.light {
+  background: linear-gradient(135deg, #e8faff, #c2e8ff);
+  color: #001020;
+}
+
+.app.dark {
+  background: linear-gradient(135deg, #001020, #002850);
+}
+.app.light .navbar h1 {
+  color: #001020;
+}
+.app.light .navbar > .nav-links a {
+  color: #003050;
+}

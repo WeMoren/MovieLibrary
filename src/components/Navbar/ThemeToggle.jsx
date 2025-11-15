@@ -7,7 +7,7 @@ const ThemeToggle = ({ theme, toggleTheme }) => {
       {theme === "light" ? (
         <Moon size={24} color="#6c5ce7" />
       ) : (
-        <Sun size={24} color="#f1c40f" />
+        <Sun size={24} color="#fdb813" />
       )}
     </button>
   );

@@ -12,7 +12,7 @@ const App = () => {
   };
 
   return (
-    <div className="app">
+    <div className={`app ${theme}`}>
       <Navbar theme={theme} toggleTheme={toggleTheme} />
       <PlayList />
       {/* <MovieCard /> */}
