@@ -30,6 +30,14 @@
   color: #c8dde1;
 }
 
+input {
+  padding: 5px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  background: #c8dde1;
+}
+
 @media (max-width: 600px) {
   .nav-links a {
     font-size: 10px;
