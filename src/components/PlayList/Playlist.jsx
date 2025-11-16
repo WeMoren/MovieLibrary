@@ -3,7 +3,7 @@ import lodash from "lodash";
 import "./Playlist.css";
 import MovieCard from "./MovieCard";
 const apiBaseUrl = import.meta.env.VITE_TMDB_BASE_URL;
-const Playlist = ({ category }) => {
+const Playlist = ({ category, search }) => {
   const [movies, setMovies] = useState([]);
   const [minRating, setMinRating] = useState(0);
   const [filteredMovies, setFilteredMovies] = useState([]);
@@ -39,6 +39,18 @@ const Playlist = ({ category }) => {
       setFilteredMovies(sortedMovies);
     }
   }, [sort]);
+
+  useEffect(() => {
+    if (!search || !search.trim()) {
+      setFilteredMovies(movies);
+      return;
+    }
+
+    const results = movies.filter((movie) =>
+      movie.title.toLowerCase().includes(search.toLowerCase())
+    );
+    setFilteredMovies(results);
+  }, [search, movies]);
 
   const handleFilter = (rate) => {
     if (rate === minRating) {
