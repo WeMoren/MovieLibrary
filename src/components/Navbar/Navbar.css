@@ -9,11 +9,11 @@
   padding: 15px 20px;
   flex-wrap: wrap;
   border-bottom: 2px solid #657072;
-  background: linear-gradient(to right, #001020, #002850);
+  background: linear-gradient(to right, #160116, #430143);
 }
 
 .navbar h1 {
-  color: #a0b2b8;
+  color: #821682;
 }
 
 .navbar > .nav-links {
@@ -27,7 +27,7 @@
   flex-wrap: wrap;
   text-decoration: none;
   font-size: 1rem;
-  color: #c8dde1;
+  color: #f7d3f7;
 }
 
 input {
@@ -35,7 +35,7 @@ input {
   border-radius: 20px;
   border: none;
   outline: none;
-  background: #c8dde1;
+  background: #f8d1f8;
 }
 
 @media (max-width: 600px) {
