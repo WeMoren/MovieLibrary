@@ -12,8 +12,8 @@
   background: linear-gradient(45deg, #110011, #290029);
 }
 
-.app.light.navbar {
-  background: linear-gradient(to right, #001020, #013b76);
+.app.light .navbar {
+  background: linear-gradient(to right, #001020, #760176ff);
 }
 .app.light .navbar h1 {
   color: #f509f5;
