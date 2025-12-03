@@ -29,6 +29,12 @@
   opacity: 0;
 }
 
+@media (max-width: 850px) {
+  .movie-details {
+    opacity: 1;
+  }
+}
+
 .movie-details:hover {
   opacity: 1;
 }

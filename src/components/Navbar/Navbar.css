@@ -38,12 +38,38 @@ input {
   background: #f8d1f8;
 }
 
-@media (max-width: 600px) {
-  .nav-links a {
-    font-size: 10px;
+@media (max-width: 850px) {
+  .navbar {
+    display: flex;
+    padding: 20px;
+    min-height: 100px;
+    gap: 10px;
+  }
+  .navbar > .nav-links a {
+    font-size: 16px;
   }
 
   .navbar h1 {
     font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 450px) {
+  h1 {
+    font-size: 1rem;
+  }
+
+  .navbar > .nav-links a {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 330px) {
+  .navbar h1 {
+    font-size: 14px;
+  }
+
+  .navbar > .nav-links a {
+    font-size: 12px;
   }
 }

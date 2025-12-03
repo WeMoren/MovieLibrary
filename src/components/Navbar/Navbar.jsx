@@ -26,6 +26,16 @@ const Navbar = ({
   return (
     <nav className="navbar">
       <h1>Movie Library</h1>
+
+      <form className="search-box" onSubmit={handleSearch}>
+        <input
+          type="text"
+          placeholder="Search movies"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
+      </form>
+
       <div className="nav-links">
         <a
           href="/"
@@ -58,14 +68,7 @@ const Navbar = ({
           Upcoming 🥳
         </a>
       </div>
-      <form className="search-box" onSubmit={handleSearch}>
-        <input
-          type="text"
-          placeholder="Search movies"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-        />
-      </form>
+
       <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
     </nav>
   );

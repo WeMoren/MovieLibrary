@@ -76,7 +76,7 @@ const Playlist = ({ category, search }) => {
       <header className="playlist-header">
         <h2 className="play-list-heading">
           {category === "popular"
-            ? "Most Popular 🔥"
+            ? " Popular 🔥"
             : category === "toprated"
             ? "Top Rated 🏆"
             : "Upcoming 🥳"}
