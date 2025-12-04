@@ -70,10 +70,20 @@
   }
 
   select {
-    width: 60px;
+    width: 54px;
   }
 
   .movie-sorting {
     display: flex;
+  }
+}
+
+@media (max-width: 450px) {
+  select {
+    width: 50px;
+  }
+
+  .movie-filter li {
+    font-size: 8px;
   }
 }
