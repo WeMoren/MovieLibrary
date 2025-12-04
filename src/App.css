@@ -4,47 +4,56 @@
 }
 
 .app.light {
-  background: linear-gradient(135deg, #fbf1fb, #f9a9f9);
+  background: #c2e8ff;
   color: #001020;
 }
 
 .app.dark {
-  background: linear-gradient(45deg, #110011, #290029);
+  background: linear-gradient(135deg, #001020, #002850);
+  color: #c2e8ff;
 }
 
 .app.light .navbar {
-  background: linear-gradient(to right, #001020, #760176ff);
+  background: linear-gradient(to right, #001020, #0362c1);
 }
 .app.light .navbar h1 {
-  color: #f509f5;
+  color: #79ddf9;
 }
 .app.light .navbar > .nav-links a {
-  color: #e8faff;
+  color: #bfeffc;
 }
 
-.app.light .playlist-header h2,
-li {
-  color: #290129;
+.app.light .playlist-header h2 {
+  color: #001020;
+}
+
+.app.light select {
+  background-color: #013d79;
+  color: #c2e8ff;
 }
 
 .app.dark .playlist-header h2,
-li {
-  color: #f509f5;
+.playlist-header li {
+  color: #6fc2f6;
+}
+
+.app.light .movie-filter li {
+  color: #001020;
 }
 
 .app.light .footer p {
-  color: #fab7fa;
+  color: #6fc2f6;
 }
 
 .app.dark .footer p {
-  color: #f8d1f8;
+  color: #b2dffb;
 }
 
 .app.light .footer a {
-  color: #efa5ef;
+  color: #a9dbfb;
 }
 .app.light .footer a:hover {
-  color: #f3e7f3;
+  color: #d4efff;
 }
 .app.dark .footer a {
   color: #c2e8ff;
